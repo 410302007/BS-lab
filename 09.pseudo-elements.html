@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo-elements</title>
+</head>
+<style>
+    /*偽元素*/
+    .price::before {
+        content: '$'
+    }
+
+    .price::after {
+        content: '元'
+    }
+
+    .card {
+        border: 1px solid lightblue;
+        float: left;
+        width: 30%;
+    }
+
+    .cancel {
+        position: relative;
+    }
+
+    .cancel::before {
+        content: 'X';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        /* width: 100px;
+        height: 100px; */
+        background: url()
+    }
+
+    .clear::after {
+        content: '';
+        display: inline-block;
+        clear: both;
+    }
+</style>
+
+<body>
+    <h1 class="price">3000</h1>
+    <!---->
+    <div class="wrap clearfix">
+        <div class="card cancel">
+            <!--before-->
+
+            <img src="" alt="">
+            <h3>Title</h3>
+            <p class="price">300</p>
+        </div>
+        <div class="card">
+            <!--before-->
+
+            <img src="" alt="">
+            <h3>Title2</h3>
+            <p class="price">300</p>
+        </div>
+        <div class="card cancel">
+            <!--before-->
+
+            <img src="" alt="">
+            <h3>Title3</h3>
+            <p class="price">300</p>
+        </div>
+        <!-- after -->
+    </div>
+</body>
+
+</html>
