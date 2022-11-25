@@ -15,28 +15,45 @@
         border-left: 1px solid darkgray;
     }
 
-    section {
-        border: 1px solid red;
-        min-height: 100px;
-    }
-
-    section:nth-child(1) {
+    /* section:nth-child(1) {
         background: #ccc;
 
-        margin-bottom: 10px;
-        /*section(1)=>margin-bottom:10px 和 section(2)=>margin-top: 10px  ==>邊界重疊*/
-        /*margin-bottom or margin-top擇一 要不選擇bottom 要不選擇top*/
-    }
+        /* margin-bottom: 10px; */
+    /*section(1)=>margin-bottom:10px 和 section(2)=>margin-top: 10px  ==>邊界重疊*/
+    /*margin-bottom or margin-top擇一 要不選擇bottom 要不選擇top*/
 
-    section:nth-child(2) {
+
+    /* section:nth-child(2) {
         background: lightblue;
         margin-top: 10px;
+    } */
+
+    .box1 {
+        background: lightcoral;
+    }
+
+    .box2 {
+        background: lightseagreen;
+    }
+
+
+
+    @media screen and (min-width:768px) {
+        .border-top-md-0 {
+            border-top: none !important;
+        }
     }
 </style>
 
 <body>
-    <header class="border-bottom py-2">
-        <!-- py=> padding上下皆2 -->
+    <!-- <div class="wrap">
+        <div class="box1 d-none d-md-flex">box1</div>
+        桌機版才出現
+        <div class="box2 d-block d-md-none">box2</div>
+        手機版才出現
+    </div> -->
+    <header class="border-bottom pt-3 pb-md-3 border-bottom">
+        <!-- py=> padding上下 -->
         <div class="container">
             <div class="row">
                 <!-- mt-5 -->
@@ -65,12 +82,16 @@
                         </svg>
                     </h1>
                 </div>
-                <div class="col-auto d-flex align-items-center">
-                    <a class="text-black text-decoration-none me-3 border-left-darkgray ps-4" href="#">探索</a>
-                    <a class="text-black text-decoration-none" href="#">提案</a>
-                    <!-- me-3可加可不加, 因堤案後已無東西-->
+                <div
+                    class="col-12 col-md-auto d-flex align-items-center order-2 order-sm-0 text-center py-3 py-md-0 border-top border-top-md-0 mt-3 mt-md-0">
+                    <a class="col-6 text-black text-decoration-none me-md-3 border-md-start ps-md-4" href="#">探索</a>
+                    <a class="col-6 text-black text-decoration-none me-md-3" href="#">提案</a>
                 </div>
-                <div class="col-auto"></div>
+                <div class="col-auto ms-auto order-1 order-sm-0">
+                    <button class="btn btn-secondary btn-sm">登入</button>
+                    <button class="btn btn-secondary btn-sm">註冊</button>
+                    <button class="btn btn-secondary btn-sm ">Facebook登入</button>
+                </div>
             </div>
         </div>
     </header>
@@ -78,17 +99,184 @@
 
 
     <nav>
+        <section class="hero-section">
+            <div class="container">
+                <!--方法一-->
+                <!-- <div class="mx-auto" style="width:80%; background-color:#000;">
+                    <div class="col"
+                        style="background: url('/bootstrap-5.1.1/img/asset_543993_image_big.webp') no-repeat; background-size: cover; aspect-ratio: 16/9; width:80%; opacity: 0.8;">
+                    </div> -->
+            </div>
+            <!--方法二-->
+            <div class="col mx-auto"
+                style="background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) , url('/bootstrap-5.1.1/img/asset_530700_image_big.webp') no-repeat; background-size: cover; aspect-ratio: 16/9; width:80%; opacity: 1;">
+
+                <div class="d-flex w-75 h-100 mx-auto flex-column align-items-center justify-content-center ">
+                    <p class="text-white">剩下10天</p>
+                    <h2 class="h4 text-white">
+                        Withering Calendar 2023 植物凋零曆 ｜凡事都會消逝，凡事也都會再來</h2>
+                    <button class="btn btn-outline-light">查看計畫內容</button>
+                </div>
+            </div>
+            </div>
+        </section>
 
     </nav>
 
+    <nav>
+        <div class="container mt-4">
+            <div class="row position-relative py-4 border-top border-bottom ">
+                <ul class="list-unstyled d-flex justify-content-center mb-0">
+                    <li class="px-3"><a class="text-black text-decoration-none" href="#">link1</a></li>
+                    <li class="px-3"><a class="text-black text-decoration-none" href="#">link2</a></li>
+                    <li class="px-3"><a class="text-black text-decoration-none" href="#">link3</a></li>
+                    <li class="px-3"><a class="text-black text-decoration-none" href="#">link4</a></li>
+                    <li class="px-3"><a class="text-black text-decoration-none" href="#">link5</a></li>
+                    <li class="px-3"><a class="text-black text-decoration-none" href="#">link6</a></li>
+                    <li class="px-3"><a class="text-black text-decoration-none" href="#">link7</a></li>
+                    <li class="px-3"><a class="text-black text-decoration-none" href="#">link8</a></li>
+                </ul>
+                <p class="position-absolute"
+                    style="width:fit-content;top:0; left:50%; transform: translate(-50%, -50%); background-color:#fff; padding-left: 30px; padding-right:30px">
+                    探索專案類別</p>
+            </div>
+        </div>
+    </nav>
 
+    <main class="my-5">
+        <div class="container">
+            <!-- container裡包section -->
+            <div class="d-flex justify-content-between ">
+                <h2>群眾募資</h2>
 
-    <main>
-        <section>1</section>
-        <section>2</section>
-        <section>3</section>
-        <section>4</section>
+                <button class="btn btn-outline-primary px-4 py-3">更多</button>
+            </div>
 
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="my-card">
+                        <img class="w-100" src="./bootstrap-5.1.1/img/asset_543993_image_big.webp" alt="">
+                        <h3>
+                            懶人曆｜2023 努力到剛好就可以，做個懶人也沒有關係｜嘖嘖Ｘ黃玠 歌詞週曆
+                        </h3>
+                        <p>
+                            出版 By <a href="/users/lan-ren-li">懶人曆2023</a>
+                        </p>
+                        <p>
+                            嘖嘖Ｘ黃玠，一起推出概念性週曆《懶人曆》，懶懶的週曆，適合懶懶的你；週曆搭配音樂人黃玠的生活感療癒歌詞，一起度過軟...</p>
+                        <div class="bg-secondary" style="height:10px;">
+                            <div class="bg-danger" style="width:78%; height:100%;"></div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <small>剩下 5 天</small>
+                            <h4 class="mb-0  ">$330,627</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="my-card h-100 d-flex flex-column">
+                        <img class="w-100" src="./bootstrap-5.1.1/img/asset_543993_image_big.webp" alt="">
+                        <h3>
+                            懶人曆｜2023 努力到剛好就可以，做個懶人也沒有關係
+                        </h3>
+                        <p>
+                            出版 By <a href="/users/lan-ren-li">懶人曆2023</a>
+                        </p>
+                        <p class="flex-grow-1">
+                            嘖嘖Ｘ黃玠，一起推出概念性週曆《懶人曆》，懶懶的週曆，適合懶懶的你；週曆搭配音樂人黃玠的生活感療癒歌詞，一起度過軟...</p>
+                        <div class="bg-secondary" style="height:10px;">
+                            <div class="bg-danger" style="width:78%; height:100%;"></div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <small>剩下 5 天</small>
+                            <h4 class="mb-0  ">$330,627</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="my-card">
+                        <img class="w-100" src="./bootstrap-5.1.1/img/asset_543993_image_big.webp" alt="">
+                        <h3>
+                            懶人曆｜2023 努力到剛好就可以，做個懶人也沒有關係｜嘖嘖Ｘ黃玠 歌詞週曆
+                        </h3>
+                        <p>
+                            出版 By <a href="/users/lan-ren-li">懶人曆2023</a>
+                        </p>
+                        <p>
+                            嘖嘖Ｘ黃玠，一起推出概念性週曆《懶人曆》，懶懶的週曆，適合懶懶的你；週曆搭配音樂人黃玠的生活感療癒歌詞，一起度過軟...嘖嘖Ｘ黃玠，一起推出概念性週曆《懶人曆》，懶懶的週曆，適合懶懶的你；週曆搭配音樂人黃玠的生活感療癒歌詞，一起度過軟...嘖嘖Ｘ黃玠，一起推出概念性週曆《懶人曆》，懶懶的週曆，適合懶懶的你；週曆搭配音樂人黃玠的生活感療癒歌詞，一起度過軟...
+                        </p>
+                        <div class="bg-secondary" style="height:10px;">
+                            <div class="bg-danger" style="width:78%; height:100%;"></div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <small>剩下 5 天</small>
+                            <h4 class="mb-0  ">$330,627</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="my-card">
+                        <img class="w-100" src="./bootstrap-5.1.1/img/asset_543993_image_big.webp" alt="">
+                        <h3>
+                            懶人曆｜2023 努力到剛好就可以，做個懶人也沒有關係｜嘖嘖Ｘ黃玠 歌詞週曆
+                        </h3>
+                        <p>
+                            出版 By <a href="/users/lan-ren-li">懶人曆2023</a>
+                        </p>
+                        <p>
+                            嘖嘖Ｘ黃玠，一起推出概念性週曆《懶人曆》，懶懶的週曆，適合懶懶的你；週曆搭配音樂人黃玠的生活感療癒歌詞，一起度過軟...</p>
+                        <div class="bg-secondary" style="height:10px;">
+                            <div class="bg-danger" style="width:78%; height:100%;"></div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <small>剩下 5 天</small>
+                            <h4 class="mb-0  ">$330,627</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="my-card">
+                        <img class="w-100" src="./bootstrap-5.1.1/img/asset_543993_image_big.webp" alt="">
+                        <h3>
+                            懶人曆｜2023 努力到剛好就可以，做個懶人也沒有關係｜嘖嘖Ｘ黃玠 歌詞週曆
+                        </h3>
+                        <p>
+                            出版 By <a href="/users/lan-ren-li">懶人曆2023</a>
+                        </p>
+                        <p>
+                            嘖嘖Ｘ黃玠，一起推出概念性週曆《懶人曆》，懶懶的週曆，適合懶懶的你；週曆搭配音樂人黃玠的生活感療癒歌詞，一起度過軟...</p>
+                        <div class="bg-secondary" style="height:10px;">
+                            <div class="bg-danger" style="width:78%; height:100%;"></div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <small>剩下 5 天</small>
+                            <h4 class="mb-0  ">$330,627</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                    <div class="my-card">
+                        <img class="w-100" src="./bootstrap-5.1.1/img/asset_543993_image_big.webp" alt="">
+                        <h3>
+                            懶人曆｜2023 努力到剛好就可以，做個懶人也沒有關係｜嘖嘖Ｘ黃玠 歌詞週曆
+                        </h3>
+                        <p>
+                            出版 By <a href="/users/lan-ren-li">懶人曆2023</a>
+                        </p>
+                        <p>
+                            嘖嘖Ｘ黃玠，一起推出概念性週曆《懶人曆》，懶懶的週曆，適合懶懶的你；週曆搭配音樂人黃玠的生活感療癒歌詞，一起度過軟...</p>
+                        <div class="bg-secondary" style="height:10px;">
+                            <div class="bg-danger" style="width:78%; height:100%;"></div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <small>剩下 5 天</small>
+                            <h4 class="mb-0">$330,627</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
     </main>
 
 
